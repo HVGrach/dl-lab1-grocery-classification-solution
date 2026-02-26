@@ -53,6 +53,13 @@ pip install -r requirements_common_team_train.txt
 - финальные CV5 run-артефакты
 - при необходимости bundle с `top_new_dataset` и fixed folds
 
+### 1.4. Ускоренный маршрут
+
+Для быстрого старта см. `repro/README.md`:
+- `repro/scripts/01_check_layout.sh`
+- `repro/scripts/02_reproduce_full_cv5_submission.sh`
+- `repro/scripts/03_reproduce_best_mixed_submission.sh`
+
 ## 2. Ожидаемая структура путей
 
 Launcher-скрипты рассчитаны на структуру:
@@ -226,11 +233,10 @@ repo_root/
 4. Проверить, что `timm` скачал базовые pretrained weights (если интернет доступен).
 5. Зафиксировать версию PyTorch и устройство (`mps` / `cuda`) в логах запуска.
 
-## 8. Что ещё нужно сделать перед финальной публикацией преподавателю
+## 8. Финальные шаги перед публикацией
 
 См. `docs/RELEASE_CHECKLIST_RU.md`, но минимум:
 - загрузить большие веса/бандлы на Yandex Disk / Google Drive;
 - вписать ссылки в `weights/README.md`;
 - создать GitHub Release (не обязательно, но удобно);
 - при желании добавить private-result post-mortem после раскрытия private leaderboard.
-

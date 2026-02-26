@@ -1,56 +1,43 @@
-# Weights And Large Artifacts (To Be Added)
+# Weights And Large Artifacts
 
-В этом репозитории большие файлы не хранятся. Сюда нужно добавить ссылки на внешнее хранилище (Yandex Disk / Google Drive) после загрузки.
+Большие файлы не хранятся в git.  
+Ниже перечислены канонические архивы для воспроизведения и их статус публикации.
 
-## Что загрузить (рекомендуемый минимум)
+## Пакеты для публикации
 
-### 1. Team bundle: `top_new_dataset` + task-specific checkpoints
+### 1) `team_bundle_top_new_tinder_plus_ckpts_2026-02-26_v1.zip`
 
-- Имя архива (пример): `team_bundle_top_new_tinder_plus_ckpts_2026-02-26_v1.zip`
-- Что внутри:
-  - `top_new_dataset` (после Tinder-cleaning)
-  - fixed folds CSV
-  - CV5 checkpoints (`ConvNeXt-S`, `EffNetV2-S`, `DeiT3-S`)
-  - one-fold probes
-  - scripts / manifest
+- Назначение: полный data+checkpoint bundle (`top_new_dataset`, fixed folds, CV5 checkpoints, probes, scripts)
+- Локальный источник: `/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/share/team_bundle_top_new_tinder_plus_ckpts_2026-02-26_v1.zip`
+- Размер: `~4.7 GB`
+- Статус ссылки:
+  - Yandex Disk: `не опубликовано`
+  - Google Drive: `не опубликовано`
+  - SHA256: `не опубликовано`
 
-Ссылка:
-- Yandex Disk: `TODO`
-- Google Drive: `TODO`
-- Size: `TODO`
-- SHA256: `TODO`
+### 2) `team_final3_cv5_split_bundle_2026-02-26_v1.zip`
 
-### 2. Team split training bundle (для распределённого обучения)
+- Назначение: split-training bundle (`3 модели x 4 фолда`, launcher'ы, requirements, README)
+- Локальный источник: `/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/share/team_final3_cv5_split_bundle_2026-02-26_v1.zip`
+- Размер: `~725 MB`
+- Статус ссылки:
+  - Yandex Disk: `не опубликовано`
+  - Google Drive: `не опубликовано`
+  - SHA256: `не опубликовано`
 
-- Имя архива (пример): `team_final3_cv5_split_bundle_2026-02-26_v1.zip`
-- Что внутри:
-  - `top_new_dataset`
-  - `folds_used_top_new_dataset_aligned_hybrid.csv`
-  - `dl_lab1/scripts/`
-  - launcher'ы `run_*.sh`
-  - `requirements_common_team_train.txt`
-  - `README_TEAM_FINAL3_CV5_SPLIT.md`
+### 3) `convnext_small_deadline14f4_weights_f0f1_2026-02-26.zip`
 
-Ссылка:
-- Yandex Disk: `TODO`
-- Google Drive: `TODO`
-- Size: `TODO`
-- SHA256: `TODO`
+- Назначение: lightweight weight-only архив для быстрого старта (ConvNeXt-S f0/f1)
+- Локальный источник: `/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/share/convnext_small_deadline14f4_weights_f0f1_2026-02-26.zip`
+- Размер: `~755 MB`
+- Статус ссылки:
+  - Yandex Disk: `не опубликовано`
+  - Google Drive: `не опубликовано`
+  - SHA256: `не опубликовано`
 
-### 3. Отдельные lightweight weight bundles (по необходимости)
+## Требования к публикации ссылок
 
-Примеры:
-- `convnext_small_deadline14f4_weights_f0f1_2026-02-26.zip`
-
-Ссылка:
-- Yandex Disk: `TODO`
-- Google Drive: `TODO`
-- Size: `TODO`
-- SHA256: `TODO`
-
-## Замечания
-
-- Для reproducibility лучше давать и **bundle**, и **отдельные weight-only архивы**.
-- Права доступа к ссылкам: "доступ по ссылке" без запроса разрешения.
-- Если есть несколько версий архива, явно укажите какая является "canonical".
+- Доступ: "Anyone with the link / Доступ по ссылке".
+- Желательно публиковать и URL, и SHA256.
+- После публикации ссылок обновите этот файл и `docs/RELEASE_CHECKLIST_RU.md`.
 
