@@ -1,0 +1,10 @@
+date,submission_file,public_score,category,notes
+2026-02-22,submission_cv5_all20_lr_geo8_equal.csv,0.97154,full_cv5_stable_hedge,"20 models (4x5), LR(MSE) per fold, geo8 TTA"
+2026-02-26,submission_default_lr_geo8_equal.csv,0.95882,partial_final3_smoke,"Partial pool; technical smoke test, not final"
+2026-02-26,submission_meta_cwr_geo8_oof_acc.csv,0.96904,meta_cwr_partial_common01,"CWR on partial common01 pool"
+2026-02-26,submission_mixed_cwr_geo8_oof_acc.csv,0.96972,mixed_old_new_cwr,"CWR on mixed old+new"
+2026-02-26,submission_mixed_lr_mse_geo8_oof_acc.csv,0.97338,mixed_old_new_lr_mse_best,"Best public on deadline cycle"
+2026-02-26,submission_mixed_lr_mse_geo8_equal.csv,0.97338,mixed_old_new_lr_mse_equal,"Identical labels to oof_acc fold aggregation"
+2026-02-26,submission_mixed_lr_mse_geo8_oof_acc_pairexp_aggr1.csv,0.97338,mixed_lr_plus_pair_experts,"No public gain vs mixed LR baseline"
+2026-02-26,submission_mixed_lr_mse_geo8_oof_acc_pairexp_aggr2.csv,0.97338,mixed_lr_plus_pair_experts,"No public gain vs mixed LR baseline"
+

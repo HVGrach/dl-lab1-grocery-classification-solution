@@ -1,0 +1,41 @@
+{
+  "changed_total": 1,
+  "pair_stats": [
+    {
+      "alias": "kiwi_vs_potato",
+      "pair": [
+        6,
+        5
+      ],
+      "margin_thr": 0.1,
+      "prob_thr": 0.3650000000000001,
+      "pair_top2_rows": 168,
+      "gated_rows": 1,
+      "label_changes_after_pair": 1
+    },
+    {
+      "alias": "redapple_vs_tomato",
+      "pair": [
+        14,
+        12
+      ],
+      "margin_thr": 0.0,
+      "prob_thr": 0.2,
+      "pair_top2_rows": 74,
+      "gated_rows": 0,
+      "label_changes_after_pair": 0
+    },
+    {
+      "alias": "mandarin_vs_orange",
+      "pair": [
+        9,
+        0
+      ],
+      "margin_thr": 0.25,
+      "prob_thr": 0.1,
+      "pair_top2_rows": 99,
+      "gated_rows": 2,
+      "label_changes_after_pair": 0
+    }
+  ]
+}

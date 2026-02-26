@@ -1,0 +1,207 @@
+# План Презентации Для Защиты (RU)
+
+Ниже готовый каркас презентации, который закрывает требования преподавателя:
+- какие эксперименты были;
+- какие улучшения относительно бейзлайна сделали;
+- что не улучшило/ухудшило;
+- идеи дальнейших улучшений;
+- воспроизводимость решения.
+
+Рекомендуемая длина: `10-14` слайдов + `2-4` backup-слайда.
+
+## Слайд 1. Титульный
+
+Что показать:
+- название проекта / соревнования
+- команда
+- период работы
+- итоговый лучший public score на момент дедлайна: `0.97338`
+
+Что сказать:
+- это результат по состоянию на `26 февраля 2026`
+- private ещё не раскрыт / не разобран (если актуально)
+
+## Слайд 2. Постановка задачи и ограничения
+
+Что показать:
+- 15 классов фруктов/овощей
+- метрика соревнования
+- ограничения по вычислениям (MPS/CUDA, дедлайн)
+- важное правило: **test dataset не меняли**
+
+Что сказать:
+- основной риск: domain shift между public и private
+- поэтому мы смотрели не только на public score, но и на OOF/групповые риски
+
+## Слайд 3. Архитектура решения (high-level)
+
+Что показать (диаграмма/блоки):
+- Data layer (cleaning + `top_new_dataset`)
+- Model layer (ConvNeXt-S / EffNetV2-S / DeiT3-S, `no_color`, `SAM`, `SWA`)
+- Ensemble layer (`LR(MSE)`, `geo8`, late-stage mixed old+new)
+- Delivery layer (launcher'ы, split-bundle, оркестраторы)
+
+Что сказать:
+- финальное качество пришло от комбинации data + training + ensemble, а не от одного "магического" трюка
+
+## Слайд 4. Бейзлайн и эволюция ансамбля
+
+Что показать:
+- таблицу/график роста качества по этапам
+- изображение: `assets/chart_ensemble_progress.png`
+
+Обязательные тезисы:
+- базовый weighted ensemble
+- weight search
+- class-bias
+- pair-experts
+- meta ideas
+
+Что сказать:
+- часть улучшений была дешёвой и воспроизводимой (weight search, bias)
+- часть требовала более сложной инженерии (meta, late-stage orchestrators)
+
+## Слайд 5. Ключевой эксперимент: color aug вредит
+
+Что показать:
+- `assets/chart_color_ablation.png`
+- таблицу `full` vs `no_color`
+
+Ключевые цифры:
+- `+0.00917 acc`
+- `+0.00731 f1_macro` в пользу `no_color`
+
+Что сказать:
+- это был turning point
+- после этого перестроили baseline и дальнейшие эксперименты
+
+## Слайд 6. Ручная чистка данных (Tinder-style UI) — highlight
+
+Что показать:
+- `assets/cleaning_preview.jpg`
+- pipeline: `review -> export -> apply -> validate`
+- статистику `keep/relabel/trash`
+
+Ключевые цифры:
+- просмотрено `9889` изображений
+- `relabel=139`, `trash=54`
+- итог `9835` валидных train-изображений
+
+Что сказать:
+- это инженерно сильная часть проекта: есть лог действий, undo/replay, автоматическое применение, валидация структуры
+
+## Слайд 7. Что пробовали в обучении (phase1 probes / night zoo)
+
+Что показать:
+- таблицу с probes (`baseline`, `swa_earlier`, `ls=0.03`, `sam_off`, `swa_off`)
+- кратко результаты one-fold night zoo
+
+Что сказать:
+- подтвердили полезность `SWA`, `SAM`, `label_smoothing=0.03`
+- `ViT-Base` как single был слабым и в итоге часто получал нулевой вес
+
+## Слайд 8. Full CV5 и стабильный хедж
+
+Что показать:
+- full-CV5 setup (`20` runs = `4x5`)
+- `LR(MSE)` внутри фолда + `geo8` TTA + equal fold aggregation
+- public score `0.97154`
+
+Что сказать:
+- это "зрелый" и относительно стабильный хедж
+- полезен как противоположность late-stage mixed стратегии
+
+## Слайд 9. Late-stage финальный буст: mixed old+new orchestrator
+
+Что показать:
+- идея смешения pre-clean и post-clean zoo
+- таблицу late-stage сабмитов (`0.95882`, `0.96904`, `0.96972`, `0.97338`)
+- итоговый победитель: `mixed LR(MSE) + geo8`
+
+Ключевые цифры:
+- best public: **`0.97338`**
+
+Что сказать:
+- источником прироста стал diversity между `old` и `new` пулами
+- `CWR` выглядел сильнее локально, но проиграл на public
+
+## Слайд 10. Что не сработало / ухудшило (обязательно по требованию)
+
+Что показать списком:
+- color-aug (ухудшает)
+- `stage4 confidence-aware finetune` (не дал прироста)
+- `mixed CWR` как финальный public-сабмит (хуже `mixed LR`)
+- pair-experts поверх `mixed LR` (не добавили прироста)
+- partial final3 default ensemble (`0.95882`) как smoke, не боевой результат
+
+Что сказать:
+- показать, что решения принимались не "по ощущениям", а по controlled A/B и метрикам
+
+## Слайд 11. Риск private и что мы делали для устойчивости
+
+Что показать:
+- `assets/chart_risk_profile.png`
+- тезис про group-shift по `plu`
+
+Что сказать:
+- на IID holdout всё выглядит отлично, но на group-holdout риск высокий
+- поэтому финальный выбор делали не только по public
+
+## Слайд 12. Воспроизводимость (репозиторий + веса)
+
+Что показать:
+- структуру репозитория
+- launcher'ы (`run_me_m2_convnext_small.sh`, и т.д.)
+- `weights/README.md` (куда будут добавлены ссылки на Yandex Disk / GDrive)
+- `docs/REPRODUCIBILITY_RU.md`
+
+Что сказать:
+- в git лежит код + инструкции + маленькие артефакты
+- большие веса вынесены на внешний диск
+- репозиторий рассчитан на воспроизведение командой
+
+## Слайд 13. Идеи улучшения после дедлайна
+
+Что показать:
+- 4-6 пунктов из `docs/EXPERIMENTS_RU.md`
+
+Рекомендуемые пункты:
+- расширить diversity для `mixed LR`
+- честно проверить `CWR/attn` на полном пуле
+- CatBoost meta на честном OOF
+- group-aware финальный отбор (по `plu`)
+- high-resolution stage-2 fine-tune
+
+## Слайд 14. Итоги
+
+Что сказать (коротко):
+- сильный результат получен за счёт комбинации data cleaning + устойчивого тренинга + ансамблирования
+- ключевые решения подтверждены экспериментально
+- репозиторий оформлен для воспроизводимости и защиты
+
+## Backup-слайды (очень рекомендуется)
+
+### Backup A. Подробная таблица экспериментов
+
+Источник:
+- `docs/EXPERIMENTS_RU.md`
+
+### Backup B. Артефакты Tinder-cleaning
+
+Показать:
+- `artifacts/manual_review/tinder_session_export_summary.json`
+- `artifacts/manual_review/actions_for_apply_manual_actions.csv`
+- `artifacts/manual_review/per_class_stats.csv`
+
+### Backup C. Финальные сабмиты и public scores
+
+Источник:
+- `artifacts/submissions/public_scores_registry.csv`
+
+### Backup D. Карта скриптов и оркестраторов
+
+Показать:
+- `dl_lab1/scripts/mixed_old_new_orchestrator_submit.py`
+- `dl_lab1/scripts/top_new_final3_cv5_train_orchestrator.py`
+- `dl_lab1/scripts/adaptive_top_new_night_pipeline.py`
+

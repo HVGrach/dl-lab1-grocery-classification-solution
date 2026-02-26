@@ -1,0 +1,167 @@
+{
+  "zoo_root": "/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/outputs_night_model_zoo_cv5",
+  "run_ranking_csv": "/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/outputs_night_model_zoo_cv5/run_ranking.csv",
+  "num_models_total": 20,
+  "num_folds": 5,
+  "fold_aggregation": "equal",
+  "fold_weights": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "tta_mode": "geo8",
+  "tta_views_limit": 0,
+  "device": "mps",
+  "folds": {
+    "0": {
+      "models": [
+        "cnn_convnext_small_sam_swa",
+        "cnn_effnetv2_s_sam_swa",
+        "vit_base_augreg_lite",
+        "vit_deit3_small_color_safe"
+      ],
+      "weights_lr_mse": [
+        0.4953073260511311,
+        0.368261582521862,
+        0.0,
+        0.136431091427007
+      ],
+      "oof_blend_metrics": {
+        "acc": 0.9721052631578947,
+        "f1_macro": 0.970049278265409
+      },
+      "tta_mode": "geo8",
+      "tta_views_limit": 0,
+      "per_model_tta_views": {
+        "cnn_convnext_small_sam_swa": 8,
+        "cnn_effnetv2_s_sam_swa": 8,
+        "vit_base_augreg_lite": 8,
+        "vit_deit3_small_color_safe": 8
+      }
+    },
+    "1": {
+      "models": [
+        "cnn_convnext_small_sam_swa",
+        "cnn_effnetv2_s_sam_swa",
+        "vit_base_augreg_lite",
+        "vit_deit3_small_color_safe"
+      ],
+      "weights_lr_mse": [
+        0.5044320804564804,
+        0.3336599144741248,
+        0.0,
+        0.16190800506939493
+      ],
+      "oof_blend_metrics": {
+        "acc": 0.9757767245918905,
+        "f1_macro": 0.9719540813467817
+      },
+      "tta_mode": "geo8",
+      "tta_views_limit": 0,
+      "per_model_tta_views": {
+        "cnn_convnext_small_sam_swa": 8,
+        "cnn_effnetv2_s_sam_swa": 8,
+        "vit_base_augreg_lite": 8,
+        "vit_deit3_small_color_safe": 8
+      }
+    },
+    "2": {
+      "models": [
+        "cnn_convnext_small_sam_swa",
+        "cnn_effnetv2_s_sam_swa",
+        "vit_base_augreg_lite",
+        "vit_deit3_small_color_safe"
+      ],
+      "weights_lr_mse": [
+        0.28816455895841736,
+        0.5413096616455122,
+        0.0,
+        0.1705257793960704
+      ],
+      "oof_blend_metrics": {
+        "acc": 0.9757767245918905,
+        "f1_macro": 0.9709474005840839
+      },
+      "tta_mode": "geo8",
+      "tta_views_limit": 0,
+      "per_model_tta_views": {
+        "cnn_convnext_small_sam_swa": 8,
+        "cnn_effnetv2_s_sam_swa": 8,
+        "vit_base_augreg_lite": 8,
+        "vit_deit3_small_color_safe": 8
+      }
+    },
+    "3": {
+      "models": [
+        "cnn_convnext_small_sam_swa",
+        "cnn_effnetv2_s_sam_swa",
+        "vit_base_augreg_lite",
+        "vit_deit3_small_color_safe"
+      ],
+      "weights_lr_mse": [
+        0.38768517929913415,
+        0.4775518420625574,
+        0.0,
+        0.13476297863830838
+      ],
+      "oof_blend_metrics": {
+        "acc": 0.9784096893101633,
+        "f1_macro": 0.9775522756885363
+      },
+      "tta_mode": "geo8",
+      "tta_views_limit": 0,
+      "per_model_tta_views": {
+        "cnn_convnext_small_sam_swa": 8,
+        "cnn_effnetv2_s_sam_swa": 8,
+        "vit_base_augreg_lite": 8,
+        "vit_deit3_small_color_safe": 8
+      }
+    },
+    "4": {
+      "models": [
+        "cnn_convnext_small_sam_swa",
+        "cnn_effnetv2_s_sam_swa",
+        "vit_base_augreg_lite",
+        "vit_deit3_small_color_safe"
+      ],
+      "weights_lr_mse": [
+        0.5286901914951994,
+        0.3711243877363388,
+        0.0,
+        0.10018542076846192
+      ],
+      "oof_blend_metrics": {
+        "acc": 0.9805160610847815,
+        "f1_macro": 0.9782966746989655
+      },
+      "tta_mode": "geo8",
+      "tta_views_limit": 0,
+      "per_model_tta_views": {
+        "cnn_convnext_small_sam_swa": 8,
+        "cnn_effnetv2_s_sam_swa": 8,
+        "vit_base_augreg_lite": 8,
+        "vit_deit3_small_color_safe": 8
+      }
+    }
+  },
+  "out_csv": "/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/outputs_night_model_zoo_cv5/submission_cv5_all20_lr_geo8_equal.csv",
+  "label_distribution": {
+    "0": 226,
+    "1": 207,
+    "2": 107,
+    "3": 78,
+    "4": 207,
+    "5": 195,
+    "6": 54,
+    "7": 167,
+    "8": 170,
+    "9": 189,
+    "10": 170,
+    "11": 155,
+    "12": 196,
+    "13": 207,
+    "14": 175
+  }
+}

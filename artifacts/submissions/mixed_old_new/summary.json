@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "note": "Pseudo-CV on top_new folds for aligned intersection; optimistic for old-zoo models due different original fold partitions.",
+  "n_models_total": 6,
+  "model_keys": [
+    "old:cnn_convnext_small_sam_swa",
+    "old:cnn_effnetv2_s_sam_swa",
+    "old:vit_deit3_small_color_safe",
+    "new:cnn_convnext_small_sam_swa_ls03_swa5",
+    "new:cnn_effnetv2_s_sam_swa_ls03_swa5",
+    "new:vit_deit3_small_safe"
+  ],
+  "aligned_samples": 3755,
+  "aligned_folds": [
+    0,
+    1
+  ],
+  "results": [
+    {
+      "method": "mixed_cwr",
+      "acc": 0.9858854860186418,
+      "f1_macro": 0.9833265218818746,
+      "log_loss": 0.10616698725593497
+    },
+    {
+      "method": "mixed_lr_mse",
+      "acc": 0.9848202396804261,
+      "f1_macro": 0.9828998727610159,
+      "log_loss": 0.09965289855949964
+    }
+  ],
+  "submissions": {
+    "mixed_lr_mse": "/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/share/team_final3_cv5_split_bundle_2026-02-26_v1/dl_lab1/outputs_mixed_old_new_orchestrator/submission_mixed_lr_mse_geo8_oof_acc.csv",
+    "mixed_cwr": "/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/share/team_final3_cv5_split_bundle_2026-02-26_v1/dl_lab1/outputs_mixed_old_new_orchestrator/submission_mixed_cwr_geo8_oof_acc.csv"
+  },
+  "tta_mode": "geo8",
+  "fold_agg": "oof_acc"
+}

@@ -1,0 +1,61 @@
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Virtualenvs
+.venv/
+venv/
+env/
+
+# Secrets
+kaggle.json
+.env
+.env.*
+
+# Large training artifacts (keep outside git)
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.npz
+*.h5
+*.hdf5
+*.safetensors
+
+# Cached arrays / tensors
+*.npy
+
+# Archives (weights / datasets)
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# Runtime outputs
+dl_lab1/outputs_*/
+!dl_lab1/outputs_post_tinder_convnext_cv2_compare/
+!dl_lab1/outputs_post_tinder_convnext_cv2_compare/folds_used_top_new_dataset_aligned_hybrid.csv
+!dl_lab1/outputs_night_model_zoo_cv5/
+!dl_lab1/outputs_night_model_zoo_cv5/submission_cv5_all20_lr_geo8_equal.csv
+!dl_lab1/outputs_night_model_zoo_cv5/submission_cv5_all20_lr_geo8_equal_meta.json
+
+# Dataset placeholders only
+dl_lab1/top_new_dataset/*
+!dl_lab1/top_new_dataset/README.md
+
+# Optional external bundles / local downloads
+weights/downloads/
+data/raw/
+data/interim/
+

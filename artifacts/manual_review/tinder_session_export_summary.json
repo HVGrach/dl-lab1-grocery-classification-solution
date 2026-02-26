@@ -1,0 +1,32 @@
+{
+  "session_dir": "/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/outputs_manual_review/tinder_swipe_review/session_20260225_203059",
+  "train_root": "/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/top_new_dataset/train/train",
+  "all_decisions_jsonl": "/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/outputs_manual_review/tinder_swipe_review/session_20260225_203059/all_decisions.jsonl",
+  "event_counts": {
+    "decision": 10366,
+    "undo": 477
+  },
+  "anomalies_count": 0,
+  "dataset_images_total": 9889,
+  "review_manifest_rows": 9889,
+  "complete_all_classes": true,
+  "final_decision_counts": {
+    "ok": 9696,
+    "other_class": 139,
+    "trash": 54
+  },
+  "action_counts": {
+    "keep": 9696,
+    "relabel": 139,
+    "trash": 54
+  },
+  "export_files": {
+    "review_manifest_final_csv": "/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/outputs_manual_review/tinder_swipe_review/session_20260225_203059/export_final_actions/review_manifest_final.csv",
+    "actions_for_apply_manual_actions_csv": "/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/outputs_manual_review/tinder_swipe_review/session_20260225_203059/export_final_actions/actions_for_apply_manual_actions.csv",
+    "per_class_stats_csv": "/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/outputs_manual_review/tinder_swipe_review/session_20260225_203059/export_final_actions/per_class_stats.csv",
+    "trash_abs_paths_txt": "/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/outputs_manual_review/tinder_swipe_review/session_20260225_203059/export_final_actions/trash_abs_paths.txt",
+    "relabel_pairs_csv": "/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/outputs_manual_review/tinder_swipe_review/session_20260225_203059/export_final_actions/relabel_pairs.csv",
+    "anomalies_txt": "/Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/outputs_manual_review/tinder_swipe_review/session_20260225_203059/export_final_actions/anomalies.txt"
+  },
+  "note": "actions_for_apply_manual_actions.csv is compatible with scripts/apply_manual_actions_csv.py (columns: abs_path, action, target_class, target_label, comment_raw, ...)."
+}
