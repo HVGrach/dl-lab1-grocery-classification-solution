@@ -28,6 +28,26 @@ bash repro/scripts/02_reproduce_full_cv5_submission.sh
 bash repro/scripts/03_reproduce_best_mixed_submission.sh
 ```
 
+## Публикация архивов в Google Drive
+
+Для массовой загрузки и получения публичных ссылок:
+
+```bash
+/opt/homebrew/bin/python3.11 repro/scripts/upload_to_google_drive.py \
+  --mode oauth \
+  --folder-id "<google_drive_folder_id>" \
+  --client-secrets google_client_secret.json \
+  --make-public \
+  --files \
+  /Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/share/team_bundle_top_new_tinder_plus_ckpts_2026-02-26_v1.zip \
+  /Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/share/team_final3_cv5_split_bundle_2026-02-26_v1.zip \
+  /Users/fedorgracev/Desktop/NeuralNetwork/dl_lab1/share/convnext_small_deadline14f4_weights_f0f1_2026-02-26.zip
+```
+
+Скрипт создаёт:
+- публичные ссылки на файлы;
+- `repro/upload_manifest_google_drive.json` с `file_id`/URL/размером.
+
 ## Что подготавливается заранее
 
 - `dl_lab1/top_new_dataset` (рабочий train/test layout)
@@ -49,4 +69,3 @@ bash repro/scripts/03_reproduce_best_mixed_submission.sh
 Для контроля можно сравнить с:
 - `artifacts/submissions/cv5_all20/submission_cv5_all20_lr_geo8_equal.csv`
 - `artifacts/submissions/mixed_old_new/submission_mixed_lr_mse_geo8_oof_acc.csv`
-
