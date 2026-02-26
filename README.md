@@ -5,23 +5,23 @@
 Статус этого релиза:
 - зафиксирован по состоянию на `2026-02-26` (дедлайн-спринт);
 - лучший public score на текущем цикле: **`0.97338`** (`mixed old+new + LR(MSE) + geo8`);
-- private-часть на момент подготовки этого репозитория **ещё не разобрана**.
+- официальный private leaderboard score команды `батчсайз не влез`: **`0.95200`** (`5/17`, данные Kaggle от `2026-02-27`).
 
 ## Что здесь есть
 
 Репозиторий собран как `lean release`:
 - исходники пайплайнов (`dl_lab1/scripts/`, тренеры, оркестраторы);
 - launcher-скрипты для распределённого обучения (MPS/CUDA/Colab/PyCharm);
-- curated-артефакты для защиты (финальные сабмиты, summary, fixed folds, Tinder-cleaning actions);
+- артефакты для защиты (финальные сабмиты, summary, fixed folds, Tinder-cleaning actions);
 - документация для воспроизведения и презентации;
-- placeholders под ссылки на веса/бандлы (Yandex Disk / Google Drive).
+- реестр внешних весов/бандлов (Yandex Disk / Google Drive).
 
 Репозиторий **не содержит**:
 - исходный датасет соревнования;
 - большие checkpoints/веса (`.pt/.pth`);
-- большие zip-бандлы (они должны лежать на внешнем диске, ссылки добавляются позже).
+- большие zip-бандлы (хранятся на внешнем диске).
 
-## Ключевой результат
+## Ключевые результаты
 
 Финальный late-stage победитель на public (по состоянию на `2026-02-26`):
 
@@ -36,6 +36,17 @@
 Стабильный full-CV5 хедж:
 - `artifacts/submissions/cv5_all20/submission_cv5_all20_lr_geo8_equal.csv`
 - public score: `0.97154`
+
+Официальный private leaderboard (`2026-02-27`):
+- team: `батчсайз не влез`
+- private score: **`0.95200`**
+- rank: **`5/17`**
+
+Пост-соревновательный срез по сабмитам:
+- лучший private score среди отправленных сабмитов: `0.95515` (`attention_ensemble_submission.csv`, public `0.96798`);
+- late-stage ветка `mixed LR 0.97338` показала private `0.94675`, что подтверждает переоптимизацию под public leaderboard.
+
+Подробные таблицы: `docs/EXPERIMENTS_RU.md` и `artifacts/submissions/public_scores_registry.csv`.
 
 ## Навигация по ключевым материалам
 
@@ -87,7 +98,7 @@ Color ablation (ключевое открытие: `no_color` лучше):
 │   ├── train_top1_mps.py              # исторический базовый trainer
 │   ├── train_pair_experts_mps.py      # pair-experts trainer
 │   ├── TOP1_pipeline_clean_cv_ensemble.ipynb
-│   ├── top_new_dataset/README.md      # placeholder (датасет не хранится в git)
+│   ├── top_new_dataset/README.md      # точка размещения рабочего датасета
 │   ├── outputs_post_tinder_convnext_cv2_compare/
 │   │   └── folds_used_top_new_dataset_aligned_hybrid.csv
 │   └── outputs_night_model_zoo_cv5/   # небольшие примеры итоговых сабмитов/meta
@@ -174,7 +185,7 @@ bash run_friend_m1_deit3_small.sh
 
 ## Ссылки на веса и большие бандлы
 
-Добавлять сюда после загрузки на внешний диск:
+Реестр ссылок и статусов публикации:
 - `weights/README.md`
 
 Рекомендуется загрузить:
@@ -182,9 +193,9 @@ bash run_friend_m1_deit3_small.sh
 - `team_final3_cv5_split_bundle_...zip`
 - отдельные весовые архивы (например, `ConvNeXt-S f0/f1`)
 
-## Источник полной хронологии
+## Полная хронология
 
-Полный рабочий журнал (сырой source-of-truth, с локальными путями и всей последовательностью действий):
+Полный рабочий журнал (с локальными путями и всей последовательностью действий):
 - `docs/archive/PROJECT_ANALYSIS_FULL_SOURCE.md`
 
-Для публичного чтения и защиты используйте curated-версии в `docs/`.
+Для публичного чтения и защиты используйте структурированные версии в `docs/`.

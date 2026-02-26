@@ -245,3 +245,31 @@ One-fold probes на `ConvNeXt-S` (`top_new_dataset`, `fold=0`) дали сле�
 
 6. Refit pair-experts в новом data regime + калибровка порогов
 - полезно именно под group-shift риск, а не только под public.
+
+## 12. Post-Competition Analysis (private leaderboard)
+
+Данные зафиксированы `2026-02-27` через Kaggle CLI:
+- leaderboard (`kaggle competitions leaderboard ... -s -v`)
+- submissions (`kaggle competitions submissions ... -v`)
+
+Официальный private итог команды:
+- team: `батчсайз не влез`
+- rank: `5/17`
+- score: `0.95200`
+
+Сравнение ключевых late-stage сабмитов:
+
+| Submission | Public | Private | Комментарий |
+|---|---:|---:|---|
+| `submission_mixed_lr_mse_geo8_oof_acc.csv` | `0.97338` | `0.94675` | лучший public, заметная просадка на private |
+| `submission_mixed_lr_mse_geo8_equal.csv` | `0.97338` | `0.94675` | идентичен по меткам к `oof_acc` |
+| `submission_mixed_cwr_geo8_oof_acc.csv` | `0.96972` | `0.94878` | чуть лучше mixed-LR на private |
+| `submission_mixed_lr_mse_geo8_oof_acc_pairexp_aggr2.csv` | `0.97338` | `0.94892` | pair-experts улучшили private внутри mixed-family |
+| `submission_cv5_all20_lr_geo8_equal.csv` | `0.97154` | `0.95200` | официальный финальный score команды |
+
+Максимальный private среди всех отправленных сабмитов:
+- `attention_ensemble_submission.csv`: `public=0.96798`, `private=0.95515`
+
+Ключевой вывод:
+- в финальной фазе наблюдалась переоптимизация под public leaderboard;
+- более "консервативные" ансамбли (без агрессивной late-stage подгонки) дали лучший private-профиль.

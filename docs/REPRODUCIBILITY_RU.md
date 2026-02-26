@@ -239,4 +239,4 @@ repo_root/
 - загрузить большие веса/бандлы на Yandex Disk / Google Drive;
 - вписать ссылки в `weights/README.md`;
 - создать GitHub Release (не обязательно, но удобно);
-- при желании добавить private-result post-mortem после раскрытия private leaderboard.
+- при необходимости расширить post-competition анализ в `docs/EXPERIMENTS_RU.md`.
