@@ -54,6 +54,8 @@
 - воспроизводимость: `docs/REPRODUCIBILITY_RU.md`
 - краткий маршрут воспроизведения: `repro/README.md`
 - структура презентации: `docs/PRESENTATION_OUTLINE_RU.md`
+- финальная презентация: `docs/presentation/DL_Lab1_Grocery_Classification_Final_2026-02-27.pptx`
+- спикер-заметки на ~10 минут: `docs/presentation/SPEAKER_NOTES_10MIN_RU.md`
 
 ## Команда и зоны ответственности
 
