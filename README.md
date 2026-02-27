@@ -54,7 +54,6 @@
 - воспроизводимость: `docs/REPRODUCIBILITY_RU.md`
 - краткий маршрут воспроизведения: `repro/README.md`
 - структура презентации: `docs/PRESENTATION_OUTLINE_RU.md`
-- checklist публикации: `docs/RELEASE_CHECKLIST_RU.md`
 
 ## Команда и зоны ответственности
 
@@ -111,7 +110,6 @@ Color ablation (ключевое открытие: `no_color` лучше):
 │   ├── EXPERIMENTS_RU.md
 │   ├── REPRODUCIBILITY_RU.md
 │   ├── PRESENTATION_OUTLINE_RU.md
-│   ├── RELEASE_CHECKLIST_RU.md
 │   └── archive/PROJECT_ANALYSIS_FULL_SOURCE.md
 ├── repro/
 │   ├── README.md
