@@ -236,7 +236,7 @@ repo_root/
 ## 8. Финальные шаги перед публикацией
 
 См. `docs/RELEASE_CHECKLIST_RU.md`, но минимум:
-- загрузить большие веса/бандлы на Yandex Disk / Google Drive;
+- загрузить большие веса/бандлы на Google Drive;
 - вписать ссылки в `weights/README.md`;
 - создать GitHub Release (не обязательно, но удобно);
 - при необходимости расширить post-competition анализ в `docs/EXPERIMENTS_RU.md`.

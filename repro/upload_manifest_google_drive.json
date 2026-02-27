@@ -1,0 +1,32 @@
+{
+  "created_at": "2026-02-27",
+  "provider": "Google Drive",
+  "folder": {
+    "id": "1Jgb1xTOhgvdicsL0oPyxplWl9yIP98-b",
+    "name": "dl-lab1-grocery-classification-solution-artifacts-2026-02-27",
+    "link": "https://drive.google.com/open?id=1Jgb1xTOhgvdicsL0oPyxplWl9yIP98-b"
+  },
+  "files": [
+    {
+      "id": "1UM8CxgTj0iiTG9r9R7dWxFHjXV-ggHXh",
+      "name": "team_bundle_top_new_tinder_plus_ckpts_2026-02-26_v1.zip",
+      "bytes": 5090949660,
+      "sha256": "e596d98003a86cdc7f8385fc4d02847af3fcc0ef277dcb02bcb29566c556c584",
+      "link": "https://drive.google.com/open?id=1UM8CxgTj0iiTG9r9R7dWxFHjXV-ggHXh"
+    },
+    {
+      "id": "1R0mseuvQKeb1kBDNv5WwG15Cvn55Lu9n",
+      "name": "team_final3_cv5_split_bundle_2026-02-26_v1.zip",
+      "bytes": 759768207,
+      "sha256": "d820064750e54abdfaa1a3b357ff1735698a2f9f93eebaccb96702c092fb2fec",
+      "link": "https://drive.google.com/open?id=1R0mseuvQKeb1kBDNv5WwG15Cvn55Lu9n"
+    },
+    {
+      "id": "1q454m4zte12VFCeiBRo25RWSnKGTH2nl",
+      "name": "convnext_small_deadline14f4_weights_f0f1_2026-02-26.zip",
+      "bytes": 791999554,
+      "sha256": "208575dd867f98b97915412d55f260c79d858259d66636c772b617910bedd0f5",
+      "link": "https://drive.google.com/open?id=1q454m4zte12VFCeiBRo25RWSnKGTH2nl"
+    }
+  ]
+}

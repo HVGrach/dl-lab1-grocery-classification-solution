@@ -169,7 +169,7 @@
 Что показать:
 - структуру репозитория
 - launcher'ы (`run_me_m2_convnext_small.sh`, и т.д.)
-- `weights/README.md` (куда будут добавлены ссылки на Yandex Disk / GDrive)
+- `weights/README.md` (с опубликованными ссылками на Google Drive)
 - `docs/REPRODUCIBILITY_RU.md`
 
 Что сказать:
